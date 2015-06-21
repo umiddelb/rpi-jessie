@@ -1,11 +1,9 @@
-FROM
+FROM resin/rpi-raspbian
 
-ls
-    2  cd /root/
-    3  ls
-
-apt-get update
-apt-get -y upgrade
-apt-get -y install make gcc git bc lzop vim curl ncurses-dev
-git clone https://github.com/raspberrypi/linux.git
-curl https://raw.githubusercontent.com/docker/docker/master/contrib/check-config.sh > linux/check-config.sh
+RUN mkdir /boot/overlays
+RUN apt-get update
+RUN apt-get -y upgrade
+RUN apt-get -y install make gcc git bc lzop vim curl ncurses-dev
+RUN git clone https://github.com/raspberrypi/linux.git
+RUN curl https://raw.githubusercontent.com/docker/docker/master/contrib/check-config.sh > linux/check-config.sh
+RUN 
