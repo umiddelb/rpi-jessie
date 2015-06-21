@@ -1,3 +1,5 @@
+curl -sSL https://github.com/umiddelb/rpi-jessie/raw/master/bcmrpi_defconfig >/linux/arch/arm/configs/bcmrpi_defconfig
+
 export KERNEL=kernel
 make clean
 make bcmrpi_defconfig
